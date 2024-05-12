@@ -11,15 +11,15 @@ void Train::addCage(bool light) {
   newCage->light = light;
 
   if (first == nullptr) {
-    newCage->prev = newCage;
     newCage->next = newCage;
+    newCage->prev = newCage;
     first = newCage;
   } else {
-    newCage->prev = first->prev;
     newCage->next = first;
+    newCage->prev = first->prev;
 
-    first->prev = newCage;
     first->prev->next = newCage;
+    first->prev = newCage;
   }
 }
 int Train::getLength() {
